@@ -23,16 +23,16 @@
               <v-list-item>
                 <v-list-item-avatar size="80">
                   <v-img
-                    src="https://s3-sa-east-1.amazonaws.com/projetos-artes/fullsize%2F2011%2F10%2F29%2F15%2FWDL-Logo-8220_6769_041644115_1991191473.jpg"
+                    :src="WorkDetail.cplogo"
                   >
                   </v-img>
                 </v-list-item-avatar>
                 <v-list-item-content>
                   <v-list-item-title>
-                    <b>Tirar fotos de crianças africanas</b>
+                    <b>{{WorkDetail.name}}</b>
                   </v-list-item-title>
                   <v-list-item-subtitle>
-                    Instagram CO.
+                    {{WorkDetail.company}}
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
@@ -41,51 +41,20 @@
                   <span><b>Sobre</b></span>
                 </div>
                 <div class="">
-                  <span
-                    >O desenvolvimento da comunidade envolve muitas atividades
-                    e, geralmente, mais voltado para voluntários que desejam
-                    realizar uma variedade de tarefas enquanto se voluntariam no
-                    Rio de Janeiro.</span
-                  >
+                  <span>{{ WorkDetail.sobre }} </span>
                 </div>
                 <div class="mt-3 mb-2">
                   <span><b>Requisitos</b></span>
                 </div>
                 <div class="">
                   <v-row>
-                    <div class="mr-4">
+                    <div
+                      class="mr-4"
+                      v-for="item in WorkDetail.req"
+                      :key="item"
+                    >
                       <v-chip>
-                        Solteiro
-                      </v-chip>
-                    </div>
-                    <div class="mr-4">
-                      <v-chip>
-                        Baiano
-                      </v-chip>
-                    </div>
-                    <div class="mr-4">
-                      <v-chip>
-                        Não Fumante
-                      </v-chip>
-                    </div>
-                    <div class="mr-4">
-                      <v-chip>
-                        Idade +18
-                      </v-chip>
-                    </div>
-                    <div class="mr-4 mt-3">
-                      <v-chip>
-                        Estudantes
-                      </v-chip>
-                    </div>
-                    <div class="mr-4 mt-3">
-                      <v-chip>
-                        Famílias
-                      </v-chip>
-                    </div>
-                    <div class="mr-4 mt-3">
-                      <v-chip>
-                        Rins funcionais
+                        {{ item }}
                       </v-chip>
                     </div>
                   </v-row>
@@ -112,7 +81,11 @@
               <div class="ml-3">
                 <span><b>Atividades</b></span>
               </div>
-              <div class="ml-2 mb-3" v-for="item in Activities" :key="item.id">
+              <div
+                class="ml-2 mb-3"
+                v-for="item in WorkDetail.Activities"
+                :key="item.id"
+              >
                 <div class=" d-flex">
                   <v-icon class="mr-3" size="10">mdi-circle</v-icon>
                   <span>
@@ -123,14 +96,14 @@
             </div>
           </v-tab-item>
           <v-tab-item>
-            <div class="col-sm-12" >
+            <div class="col-sm-12">
               <v-row>
-                <v-col class="col-sm-6" v-for="item in Images" :key="item.id">
-                  <v-img
-                    :src="item.img"
-                    height="130px"
-                    width="100%"
-                  ></v-img>
+                <v-col
+                  class="col-sm-6"
+                  v-for="item in WorkDetail.Images"
+                  :key="item.id"
+                >
+                  <v-img :src="item.img" height="130px" width="100%"></v-img>
                 </v-col>
               </v-row>
             </div>
@@ -142,45 +115,153 @@
 </template>
 
 <script>
+import { Bus } from "@/plugins/Bus.js";
+
 export default {
+  created() {
+    Bus.$off("emit-click")
+    Bus.$on("emit-click", (id) => {
+     this.event(id)
+    });
+  },
   data: () => ({
     tabActive: 0,
-    Activities: [
+    WorkDetail: {},
+    WorkList: [
       {
         id: 1,
-        description:
-          "Ministrando aulas sobre conhecimentos básicos de informática",
+        name: "Tirar foto com crianças africanas",
+        company: "Instagram CO.",
+        pbdata: "05/05/2020",
+        type: "freelancer",
+        city: "Sinop",
+        state: "MT",
+        cplogo:
+          "http://operador.com.br/wp-content/uploads/2020/02/instagram.png",
+        sobre:
+          "O desenvolvimento da comunidade envolve muitas atividades e, geralmente, mais voltado para voluntários que desejam realizar uma variedade de tarefas enquanto se voluntariam no Rio de Janeiro.",
+        req: [
+          "solteiro",
+          "Baiano",
+          "Não Fumante",
+          "Idade +18",
+          "Estudante",
+          "Famílias",
+          "Rins Funcionais",
+        ],
+        Activities: [
+          {
+            id: 1,
+            description:
+              "Ministrando aulas sobre conhecimentos básicos de informática",
+          },
+          {
+            id: 2,
+            description:
+              " Ajudando a proteger uma conexão com a Internet e a configurar um laboratório de TI.",
+          },
+          {
+            id: 3,
+            description: "Ajudando em uma horta comunitária.",
+          },
+        ],
+        Images: [
+          {
+            id: 1,
+            img:
+              "https://ilhanoticias.com.br/uploads//imagens/shares/noticias/anteriores/8542147cce31d9fa95d60cdd5a93e28a.jpg.jpg",
+          },
+          {
+            id: 2,
+            img: "https://zh.rbsdirect.com.br/imagesrc/23256511.jpg?w=700",
+          },
+          {
+            id: 3,
+            img:
+              "https://abrilexame.files.wordpress.com/2018/04/siria1.jpg?quality=70&strip=info&resize=680,453",
+          },
+          {
+            id: 4,
+            img:
+              "https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_1140/v1/guides/section_image/qkcqsx5nj3njaa8urccf",
+          },
+        ],
       },
       {
         id: 2,
-        description:
-          " Ajudando a proteger uma conexão com a Internet e a configurar um laboratório de TI.",
-      },
-      {
-        id: 3,
-        description: "Ajudando em uma horta comunitária.",
+        name: "Cantar te amo piranha pra moradores de rua",
+        company: "Twitter CO.",
+        pbdata: "18/04/2020",
+        type: "Cantoria",
+        city: "São Paulo",
+        state: "SP",
+        cplogo:
+          "https://upload.wikimedia.org/wikipedia/pt/thumb/3/3d/Twitter_logo_2012.svg/172px-Twitter_logo_2012.svg.png",
+        sobre:
+          "O desenvolvimento da comunidade envolve muitas atividades e, geralmente, mais voltado para voluntários que desejam realizar uma variedade de tarefas enquanto se voluntariam no Rio de Janeiro.",
+        req: [
+          "solteiro",
+          "Baiano",
+          "Não Fumante",
+          "Idade +18",
+          "Estudante",
+          "Famílias",
+          "Rins Funcionais",
+        ],
+        Activities: [
+          {
+            id: 1,
+            description:
+              "Ministrando aulas sobre conhecimentos básicos de informática",
+          },
+          {
+            id: 2,
+            description:
+              " Ajudando a proteger uma conexão com a Internet e a configurar um laboratório de TI.",
+          },
+          {
+            id: 3,
+            description: "Ajudando em uma horta comunitária.",
+          },
+        ],
+        Images: [
+          {
+            id: 1,
+            img:
+              "https://ilhanoticias.com.br/uploads//imagens/shares/noticias/anteriores/8542147cce31d9fa95d60cdd5a93e28a.jpg.jpg",
+          },
+          {
+            id: 2,
+            img: "https://zh.rbsdirect.com.br/imagesrc/23256511.jpg?w=700",
+          },
+          {
+            id: 3,
+            img:
+              "https://abrilexame.files.wordpress.com/2018/04/siria1.jpg?quality=70&strip=info&resize=680,453",
+          },
+          {
+            id: 4,
+            img:
+              "https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_1140/v1/guides/section_image/qkcqsx5nj3njaa8urccf",
+          },
+        ],
       },
     ],
-    Images:[
-      {
-        id: 1,
-        img: "https://ilhanoticias.com.br/uploads//imagens/shares/noticias/anteriores/8542147cce31d9fa95d60cdd5a93e28a.jpg.jpg"
-      },
-      {
-        id:2,
-        img: "https://zh.rbsdirect.com.br/imagesrc/23256511.jpg?w=700"
-      },
-      {
-        id:3,
-        img: "https://abrilexame.files.wordpress.com/2018/04/siria1.jpg?quality=70&strip=info&resize=680,453"
-      },
-      {
-        id: 4,
-        img: "https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_1140/v1/guides/section_image/qkcqsx5nj3njaa8urccf"
-      }
-    ]
   }),
-  props: {},
+
+  methods: {
+    event(item){
+      console.log(item);
+      
+     const result = this.WorkList.find(
+        ({ id }) => id === parseInt(item)
+        
+      );
+      this.WorkDetail= result
+
+      console.log(result);
+    }
+  },
 };
 </script>
 
