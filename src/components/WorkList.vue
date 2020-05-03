@@ -15,10 +15,11 @@
     </div>
 
     <v-list-item
-      v-for="item in WorkList"
-      :key="item.id"
       link
-      @click="buscarDetalhes(item.id)"
+      v-for="item in WorkList"
+      :to="{name:'WorkDetail', params:{id:item.id}}"
+      :key="item.id"
+      @click="event(item.id)"
     >
       <v-list-item-avatar>
         <v-img :src="item.cplogo"></v-img>
@@ -44,6 +45,8 @@
 </template>
 
 <script>
+import { Bus } from "@/plugins/Bus.js";
+
 export default {
   data: () => ({
     WorkList: [
@@ -149,8 +152,8 @@ export default {
     ],
   }),
   methods: {
-    buscarDetalhes(id) {
-      console.log(id);
+    event(id) {
+      Bus.$emit("emit-click", id);
     },
   },
 };
