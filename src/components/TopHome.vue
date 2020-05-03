@@ -9,7 +9,6 @@
       <div class="col-sm-4 mr-2">
         <v-select
           dense
-          v-model="e1"
           :items="states"
           menu-props="auto"
           :label="states[10]"

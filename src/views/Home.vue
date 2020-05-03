@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HeaderHome />
+    <HeaderHome id="Header" class="col-sm-6"/>
     <CardsCategorie />
   </div>
 </template>
@@ -18,3 +18,10 @@ export default {
   },
 };
 </script>
+
+<style >
+#Header{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+</style>

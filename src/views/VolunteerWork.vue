@@ -4,10 +4,15 @@
       <div class="col-sm-2">
         <Menu :menu="menu" />
       </div>
-      <v-card flat class="col-sm-6">
+      <v-card flat class="col-sm-6 mt-3">
         <TopHome />
         <WorkList/>
       </v-card>
+      <div class="col-sm-4">
+        <router-view>
+        </router-view>
+
+      </div>
     </v-row>
   </div>
 </template>
@@ -15,6 +20,7 @@
 <script>
 import Menu from "@/components/Menu.vue";
 import TopHome from "@/components/TopHome.vue";
+// import HeaderHome from "@/components/HeaderHome.vue";
 // import WorkDetail from "@/components/WorkDetail.vue";
 import WorkList from "@/components/WorkList.vue";
 export default {
@@ -22,7 +28,9 @@ export default {
   components: {
     TopHome,
     Menu,
-    WorkList
+    WorkList,
+    // WorkDetail,
+    // HeaderHome
   },
   data: () => ({
     menu: [
@@ -47,6 +55,7 @@ export default {
         route: "/About",
       },
     ],
+    Detail: true
   }),
 };
 </script>
