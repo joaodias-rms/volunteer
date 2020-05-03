@@ -22,17 +22,14 @@
             <div class="col-sm-12">
               <v-list-item>
                 <v-list-item-avatar size="80">
-                  <v-img
-                    :src="WorkDetail.cplogo"
-                  >
-                  </v-img>
+                  <v-img :src="WorkDetail.cplogo"> </v-img>
                 </v-list-item-avatar>
                 <v-list-item-content>
                   <v-list-item-title>
-                    <b>{{WorkDetail.name}}</b>
+                    <b>{{ WorkDetail.name }}</b>
                   </v-list-item-title>
                   <v-list-item-subtitle>
-                    {{WorkDetail.company}}
+                    {{ WorkDetail.company }}
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
@@ -119,10 +116,13 @@ import { Bus } from "@/plugins/Bus.js";
 
 export default {
   created() {
-    Bus.$off("emit-click")
-    Bus.$on("emit-click", (id) => {
-     this.event(id)
+    Bus.$off("emit-click");
+    Bus.$on("emit-click", () => {
+      this.event();
     });
+  },
+  mounted() {
+    this.event();
   },
   data: () => ({
     tabActive: 0,
@@ -250,17 +250,14 @@ export default {
   }),
 
   methods: {
-    event(item){
-      console.log(item);
-      
-     const result = this.WorkList.find(
-        ({ id }) => id === parseInt(item)
-        
+    event() {
+      const result = this.WorkList.find(
+        ({ id }) => id === parseInt(this.$route.params.id)
       );
-      this.WorkDetail= result
+      this.WorkDetail = result;
 
       console.log(result);
-    }
+    },
   },
 };
 </script>
