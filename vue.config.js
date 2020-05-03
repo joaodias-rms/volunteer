@@ -1,3 +1,6 @@
 module.exports = {
-  transpileDependencies: ["vuetify"]
+  transpileDependencies: ["vuetify"],
+  pwa: {
+    themeColor: '#8634eb'
+  }
 };
