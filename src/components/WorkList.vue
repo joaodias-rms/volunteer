@@ -19,7 +19,7 @@
       v-for="item in WorkList"
       :to="{name:'WorkDetail', params:{id:item.id}}"
       :key="item.id"
-      @click="event(item.id)"
+      @click="event()"
     >
       <v-list-item-avatar>
         <v-img :src="item.cplogo"></v-img>
@@ -152,8 +152,9 @@ export default {
     ],
   }),
   methods: {
-    event(id) {
-      Bus.$emit("emit-click", id);
+    event() {
+      
+      Bus.$emit("emit-click");
     },
   },
 };
