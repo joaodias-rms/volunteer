@@ -14,15 +14,17 @@ const routes = [
     path: "/VolunteerWork",
     name: "VolunteerWork",
     redirect: {name:"HeaderHome"},
+    // alias: {name:"VolunteerWork"},
     component: () => import("../views/VolunteerWork.vue"),
     children: [
+      
       {
-        path: ":id/WorkDetail",
+        path: ":id/",
         name: "WorkDetail",
         component: () => import("../components/WorkDetail.vue"),
       },
       {
-        path: "/HeaderHome",
+        path: "",
         name: "HeaderHome",
         component: () => import("../components/HeaderHome.vue"),
       }
