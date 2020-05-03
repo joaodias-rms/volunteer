@@ -1,5 +1,5 @@
 <template>
-  <div id="HeaderIntro" class="col-sm-6 mx-auto">
+  <div id="HeaderIntro" class="mx-auto">
     <div class="col-sm-10 mx-auto">
       <div class="text-center">
         <Icon />
@@ -27,7 +27,6 @@ export default {
 
 <style>
 #HeaderIntro {
-  margin-top: 50px;
   margin-bottom: 50px;
 }
 </style>
