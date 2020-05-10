@@ -40,6 +40,14 @@ const routes = [
     path: "/Save",
     name: "Save",
     component: () => import("../views/Save.vue"),
+    children:[
+      {
+        path: ":id/",
+        name: "WorkDetailSaved",
+        component: () => import("../components/WorkDetail.vue"),
+      },
+
+    ]
   },
   {
     path: "/About",
