@@ -34,25 +34,29 @@ export default {
   },
   data: () => ({
     menu: [
-      {
+     {
         id: 1,
         name: "Home",
         route: "/",
+        icon: "mdi-home"
       },
       {
         id: 2,
         name: "Profile",
         route: "/Profile",
+        icon: "mdi-account"
       },
       {
         id: 3,
         name: "Saved Itens",
         route: "/Save",
+        icon: "mdi-content-save"
       },
       {
         id: 4,
         name: "How it Works?",
         route: "/About",
+        icon: "mdi-information-variant"
       },
     ],
     Detail: true
