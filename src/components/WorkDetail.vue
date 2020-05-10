@@ -116,17 +116,23 @@ import { Bus } from "@/plugins/Bus.js";
 
 export default {
   created() {
-    Bus.$off("emit-click");
-    Bus.$on("emit-click", () => {
-      this.event();
-    });
+    // Bus.$off("emit-click");
+    // Bus.$on("emit-click", () => {
+    //   this.event();
+    // });
 
-    Bus.$off("emit-save");
-    Bus.$on("emit-save", () => {
+    // Bus.$off("emit-save");
+    // Bus.$on("emit-save", () => {
+    //   this.event();
+    // });
+    Bus.$off("emit-profile");
+    Bus.$on("emit-profile", () => {
+      console.log("teste")
       this.event();
     });
   },
   mounted() {
+    
     this.event();
   },
   data: () => ({
