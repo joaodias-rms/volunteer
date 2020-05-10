@@ -120,6 +120,11 @@ export default {
     Bus.$on("emit-click", () => {
       this.event();
     });
+
+    Bus.$off("emit-save");
+    Bus.$on("emit-save", () => {
+      this.event();
+    });
   },
   mounted() {
     this.event();
@@ -139,26 +144,24 @@ export default {
         cplogo:
           "http://operador.com.br/wp-content/uploads/2020/02/instagram.png",
         sobre:
-          "O desenvolvimento da comunidade envolve muitas atividades e, geralmente, mais voltado para voluntários que desejam realizar uma variedade de tarefas enquanto se voluntariam no Rio de Janeiro.",
+          "Tirar foto com as crianças africanas traz visibilidade para a situação de fome e miséria que o país se encontra, é dever de todo o mundo se unir para mudar essa situação",
         req: [
           "solteiro",
-          "Baiano",
+          "Classe média alta",
           "Não Fumante",
           "Idade +18",
           "Estudante",
-          "Famílias",
-          "Rins Funcionais",
         ],
         Activities: [
           {
             id: 1,
             description:
-              "Ministrando aulas sobre conhecimentos básicos de informática",
+              "Tirar fotos e postar nas redes sociais",
           },
           {
             id: 2,
             description:
-              " Ajudando a proteger uma conexão com a Internet e a configurar um laboratório de TI.",
+              "Divulgas as ações sociais do projeto",
           },
           {
             id: 3,
@@ -191,37 +194,149 @@ export default {
         id: 2,
         name: "Cantar te amo piranha pra moradores de rua",
         company: "Twitter CO.",
-        pbdata: "18/04/2020",
-        type: "Cantoria",
-        city: "São Paulo",
-        state: "SP",
+        pbdata: "05/05/2020",
+        type: "freelancer",
+        city: "Sinop",
+        state: "MT",
         cplogo:
           "https://upload.wikimedia.org/wikipedia/pt/thumb/3/3d/Twitter_logo_2012.svg/172px-Twitter_logo_2012.svg.png",
         sobre:
-          "O desenvolvimento da comunidade envolve muitas atividades e, geralmente, mais voltado para voluntários que desejam realizar uma variedade de tarefas enquanto se voluntariam no Rio de Janeiro.",
+          "A cantora Mirella ao cantar Te amo piranha para moradores de rua expôs a realidade que eles vivem, reproduzindo esse ato podemos trazer mais força às ongs de apoio aos que estão em situação de rua",
         req: [
           "solteiro",
-          "Baiano",
+          "Paulista",
           "Não Fumante",
-          "Idade +18",
-          "Estudante",
-          "Famílias",
-          "Rins Funcionais",
+          "Idade +15",
+          "Disponível para viagens",
         ],
         Activities: [
           {
             id: 1,
             description:
-              "Ministrando aulas sobre conhecimentos básicos de informática",
+              "Aprender a letra de Te amo piranha",
           },
           {
             id: 2,
             description:
-              " Ajudando a proteger uma conexão com a Internet e a configurar um laboratório de TI.",
+              " Cantar te amo piranha",
           },
           {
             id: 3,
-            description: "Ajudando em uma horta comunitária.",
+            description: "Postar nas redes sociais para divulgação",
+          },
+        ],
+        Images: [
+          {
+            id: 1,
+            img:
+              "https://metropolitanafm.com.br/wp-content/uploads/2020/02/mcmirella.gif",
+          },
+          {
+            id: 2,
+            img: "https://zh.rbsdirect.com.br/imagesrc/23256511.jpg?w=700",
+          },
+          {
+            id: 3,
+            img:
+              "https://abrilexame.files.wordpress.com/2018/04/siria1.jpg?quality=70&strip=info&resize=680,453",
+          },
+          {
+            id: 4,
+            img:
+              "https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_1140/v1/guides/section_image/qkcqsx5nj3njaa8urccf",
+          },
+        ],
+      },
+      {
+        id: 3,
+        name: "Resgatar animais de rua",
+        company: "APAMS",
+        pbdata: "18/04/2020",
+        type: "Animais",
+        city: "Santa Fé",
+        state: "PR",
+        cplogo:
+          "https://static.wixstatic.com/media/bec156_a6e0560b562b402c850245c15d8bc600~mv2.png/v1/fit/w_300,h_300,al_c,q_5/file.png",
+        sobre:
+          "Assim como os humanos os animais também merecem cuidados e um lar, essa ação visa resgatar os animais de rua e divulgar a adoção dos animais",
+        req: [
+          "Gostar de animais",
+          "Idade +18",
+          "Estudante",
+          "Famílias",
+        ],
+        Activities: [
+          {
+            id: 1,
+            description:
+              "Percorrer a cidade em busca de animais sem lar",
+          },
+          {
+            id: 2,
+            description:
+              "Cuidados iniciais como banho dos animais e alimentação",
+          },
+          {
+            id: 3,
+            description: "Juntar recursos para compra de ração e remédios",
+          },
+        ],
+        Images: [
+          {
+            id: 1,
+            img:
+              "https://ilhanoticias.com.br/uploads//imagens/shares/noticias/anteriores/8542147cce31d9fa95d60cdd5a93e28a.jpg.jpg",
+          },
+          {
+            id: 2,
+            img: "https://zh.rbsdirect.com.br/imagesrc/23256511.jpg?w=700",
+          },
+          {
+            id: 3,
+            img:
+              "https://abrilexame.files.wordpress.com/2018/04/siria1.jpg?quality=70&strip=info&resize=680,453",
+          },
+          {
+            id: 4,
+            img:
+              "https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_1140/v1/guides/section_image/qkcqsx5nj3njaa8urccf",
+          },
+        ],
+      },
+       {
+        id: 4,
+        name: "Tirar foto com crianças mexicanas",
+        company: "Paleteria CO.",
+        pbdata: "05/05/2020",
+        type: "freelancer",
+        city: "Sinop",
+        state: "MT",
+        cplogo:
+          "https://assets.tumblr.com/images/logo_page/1x/t-black.png?_v=6cd7fb4b68e5e395b4ae20f748214a96",
+        sobre:
+          "As crianças mexicanas sofrem com o narcotráfico e as disputas por território no México, e fronteira dos Estados Unidos, esta ação busca trazer visibilidade à essas crianças",
+        req: [
+          "solteiro",
+          "Mexicano",
+          "Não Fumante",
+          "Idade +18",
+          "Esportista",
+          "Digital Influencers",
+        ],
+        Activities: [
+          {
+            id: 1,
+            description:
+              "Tirar fotos e gravar vídeos com as crianças mexicanas",
+          },
+          {
+            id: 2,
+            description:
+              "Levar alegria para as crianças",
+          },
+          {
+            id: 3,
+            description: "Tirar as crianças do narcotráfico",
           },
         ],
         Images: [
