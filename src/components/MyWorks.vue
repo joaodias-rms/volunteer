@@ -1,11 +1,11 @@
 <template>
   <div class="">
     <v-list-item
-      link
       v-for="item in ProfileList"
-      :to="{ name:'MyWorksItem', params: {id:item.id}}"
       :key="item.id"
-      @click="eventProfile()"
+      link
+      :to="{ name: 'MyWorks', params: { id: item.id } }"
+      @click="profileEvent()"
     >
       <v-list-item-avatar>
         <v-img :src="item.cplogo"></v-img>
@@ -25,6 +25,7 @@
 
 <script>
 import { Bus } from "@/plugins/Bus.js";
+
 export default {
   data: () => ({
     ProfileList: [
@@ -61,13 +62,24 @@ export default {
         cplogo:
           "https://static.wixstatic.com/media/bec156_a6e0560b562b402c850245c15d8bc600~mv2.png/v1/fit/w_300,h_300,al_c,q_5/file.png",
       },
+      {
+        id: 4,
+        name: "Tirar foto com crianças mexicanas",
+        company: "Paleteria CO.",
+        pbdata: "14/07/2020",
+        type: "freelancer",
+        city: "Piracicaba",
+        state: "SP",
+        cplogo:
+          "https://assets.tumblr.com/images/logo_page/1x/t-black.png?_v=6cd7fb4b68e5e395b4ae20f748214a96",
+      },
     ],
   }),
-  methods:{
-    eventProfile() {     
-      Bus.$emit("emit-profile");
+  methods: {
+    profileEvent() {
+      Bus.$emit("emitProfile");
     },
-  }
+  },
 };
 </script>
 
