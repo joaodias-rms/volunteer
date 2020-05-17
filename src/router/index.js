@@ -32,15 +32,21 @@ const routes = [
   {
     path: "/Profile",
     name: "Profile",
+    redirect: { name: "HeaderHome" },
     component: () => import("../views/Profile.vue"),
     children: [
       {
         path: ":id/",
-        name: "MyWorksItem",
-        component: () => "../components/WorkDetail.vue",
+        name: "MyWorks",
+        component: () => import("../components/WorkDetail.vue"),
       },
+      // {
+      //   path: ":id/",
+      //   name: "MyExperiences",
+      //   component: () => "../components/Experiences.vue",
+      // },
       {
-        path: "/",
+        path: "",
         name: "HeaderProfile",
         component: () => import("../components/HeaderHome.vue"),
       },
