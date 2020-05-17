@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <v-card flat>
+    <v-card flat class="mx-auto">
       <v-tabs
         grow
         v-model="tabActive"
