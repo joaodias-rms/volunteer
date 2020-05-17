@@ -6,7 +6,6 @@
       </div>
       <div class="col-sm-6">
         <TopProfile />
-
         <Account class="mt-2" />
       </div>
       <div class="col-sm-4">

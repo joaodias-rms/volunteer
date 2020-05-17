@@ -40,11 +40,11 @@ const routes = [
         name: "MyWorks",
         component: () => import("../components/WorkDetail.vue"),
       },
-      // {
-      //   path: ":id/",
-      //   name: "MyExperiences",
-      //   component: () => "../components/Experiences.vue",
-      // },
+      {
+        path: ":id/",
+        name: "MyExperiences",
+        component: () => "../components/ExperiencesDetail.vue",
+      },
       {
         path: "",
         name: "HeaderProfile",

@@ -116,23 +116,20 @@ import { Bus } from "@/plugins/Bus.js";
 
 export default {
   created() {
-    // Bus.$off("emit-click");
-    // Bus.$on("emit-click", () => {
-    //   this.event();
-    // });
-
-    // Bus.$off("emit-save");
-    // Bus.$on("emit-save", () => {
-    //   this.event();
-    // });
-    Bus.$off("emit-profile");
-    Bus.$on("emit-profile", () => {
-      console.log("teste")
+    Bus.$off("emitProfile");
+    Bus.$on("emitProfile", () => {
+      this.event();
+    });
+    Bus.$off("emit-click");
+    Bus.$on("emit-click", () => {
+      this.event();
+    });
+    Bus.$off("emit-save");
+    Bus.$on("emit-save", () => {
       this.event();
     });
   },
   mounted() {
-    
     this.event();
   },
   data: () => ({
@@ -161,13 +158,11 @@ export default {
         Activities: [
           {
             id: 1,
-            description:
-              "Tirar fotos e postar nas redes sociais",
+            description: "Tirar fotos e postar nas redes sociais",
           },
           {
             id: 2,
-            description:
-              "Divulgas as ações sociais do projeto",
+            description: "Divulgas as ações sociais do projeto",
           },
           {
             id: 3,
@@ -218,13 +213,11 @@ export default {
         Activities: [
           {
             id: 1,
-            description:
-              "Aprender a letra de Te amo piranha",
+            description: "Aprender a letra de Te amo piranha",
           },
           {
             id: 2,
-            description:
-              " Cantar te amo piranha",
+            description: " Cantar te amo piranha",
           },
           {
             id: 3,
@@ -265,17 +258,11 @@ export default {
           "https://static.wixstatic.com/media/bec156_a6e0560b562b402c850245c15d8bc600~mv2.png/v1/fit/w_300,h_300,al_c,q_5/file.png",
         sobre:
           "Assim como os humanos os animais também merecem cuidados e um lar, essa ação visa resgatar os animais de rua e divulgar a adoção dos animais",
-        req: [
-          "Gostar de animais",
-          "Idade +18",
-          "Estudante",
-          "Famílias",
-        ],
+        req: ["Gostar de animais", "Idade +18", "Estudante", "Famílias"],
         Activities: [
           {
             id: 1,
-            description:
-              "Percorrer a cidade em busca de animais sem lar",
+            description: "Percorrer a cidade em busca de animais sem lar",
           },
           {
             id: 2,
@@ -309,7 +296,7 @@ export default {
           },
         ],
       },
-       {
+      {
         id: 4,
         name: "Tirar foto com crianças mexicanas",
         company: "Paleteria CO.",
@@ -337,8 +324,7 @@ export default {
           },
           {
             id: 2,
-            description:
-              "Levar alegria para as crianças",
+            description: "Levar alegria para as crianças",
           },
           {
             id: 3,
