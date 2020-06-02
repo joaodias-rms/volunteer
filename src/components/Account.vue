@@ -9,18 +9,11 @@
         slider-color="#8634eb"
       >
         <v-tab>
-          Ações realizadas
-        </v-tab>
-        <v-tab>
           Minhas experiências
         </v-tab>
         <v-tab>
           Configurar conta
         </v-tab>
-
-          <v-tab-item>
-            <MyWorks/>
-          </v-tab-item>
           <v-tab-item>
             <Experiences />
           </v-tab-item>
@@ -33,12 +26,12 @@
 </template>
 
 <script>
-import MyWorks from "@/components/MyWorks.vue";
+// import MyWorks from "@/components/MyWorks.vue";
 import Experiences from "@/components/Experiences.vue";
 import ProfileSettings from "@/components/ProfileSettings.vue";
 export default {
   components:{
-    MyWorks,
+    // MyWorks,
     Experiences,
     ProfileSettings
   },

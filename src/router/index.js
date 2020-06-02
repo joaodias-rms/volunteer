@@ -35,15 +35,15 @@ const routes = [
     redirect: { name: "HeaderHome" },
     component: () => import("../views/Profile.vue"),
     children: [
-      {
-        path: ":id/",
-        name: "MyWorks",
-        component: () => import("../components/WorkDetail.vue"),
-      },
+      // {
+      //   path: ":id/",
+      //   name: "MyWorks",
+      //   component: () => import("../components/WorkDetail.vue"),
+      // },
       {
         path: ":id/",
         name: "MyExperiences",
-        component: () => "../components/ExperiencesDetail.vue",
+        component: () => import("../components/ExperiencesDetail.vue"),
       },
       {
         path: "",
