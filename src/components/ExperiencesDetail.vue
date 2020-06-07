@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <v-card>
+    <v-card flat>
       <v-tabs
         grow
         v-model="tabActive"
@@ -16,11 +16,24 @@
         </v-tab>
         <v-tabs-items v-model="tabActive">
           <v-tab-item>
-            <div class="col-sm-12" v-for="item in ExperienceList" :key="item.id">
+            <div>
               <div class="">
                 <v-icon class="mr-3" size="10">mdi-circle</v-icon>
-                <span>{{ item.description }} </span>
+                <span>{{ ExperienceDetail.description }} </span>
               </div>
+            </div>
+          </v-tab-item>
+          <v-tab-item>
+            <div class="">
+              <v-row>
+                <v-col
+                  class="col-sm-6"
+                  v-for="item in ExperienceDetail.ExpImages"
+                  :key="item.id"
+                >
+                  <v-img :src="item.img" height="130px" width="100%"></v-img>
+                </v-col>
+              </v-row>
             </div>
           </v-tab-item>
         </v-tabs-items>
@@ -38,14 +51,16 @@ export default {
       this.event();
     });
   },
+  mounted() {
+    this.event();
+  },
   data: () => ({
     tabActive: 0,
+    ExperienceDetail: {},
     ExperienceList: [
       {
         id: 1,
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Crassed lacus sed augue volutpat imperdiet quis et dolor. Etiam orcis felis, accumsan ac erat nec, maximus commodo tortor. Fusce neclobortis orci, non ornare eros. Nullam sit amet felis et nunc iaculis consectetur at at orci. Aliquam cursus sagittis lacinia.t placerat id risus ac rutrum. Proin sollicitudin convallisnim, non malesuada elit fermentum nec. Integer aliquet dapibusrna sed lacinia. Quisque aliquam, erat at tincidunt laoreet,rci enim accumsan diam, at consequat risus ante et sem. Lorempsum dolor sit amet, consectetur adipiscing elit. Aeneanuscipit gravida nisl eu aliquam. Nullam id velit a lectusermentum lacinia. Duis pulvinar, mauris quis imperdietccumsan, justo ligula sodales nisi, vel tempor enim nibh eudio. Nunc vitae nulla mauris. Pellentesque in diam nisl. Nullaiam velit, tempus rutrum vehicula at, finibus non neque.",
-
+        description: "Teste normalzinho só pra ver como está saindo",
         ExpImages: [
           {
             id: 1,
@@ -58,8 +73,7 @@ export default {
           },
           {
             id: 3,
-            img:
-              "https://abrilexame.files.wordpress.com/2018/04/siria1.jpg?quality=70&strip=info&resize=680,453",
+            img: "https://conceitos.com/wp-content/uploads/2014/07/ONG.jpg",
           },
           {
             id: 4,
@@ -68,12 +82,9 @@ export default {
           },
         ],
       },
-
       {
         id: 2,
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Crassed lacus sed augue volutpat imperdiet quis et dolor. Etiam orcis felis, accumsan ac erat nec, maximus commodo tortor. Fusce neclobortis orci, non ornare eros. Nullam sit amet felis et nunc iaculis consectetur at at orci. Aliquam cursus sagittis lacinia.t placerat id.",
-
+        description: "Teste do id 2 isso não deve aparecer em outro id.",
         ExpImages: [
           {
             id: 1,
@@ -86,8 +97,55 @@ export default {
           },
           {
             id: 3,
+            img: "https://conceitos.com/wp-content/uploads/2014/07/ONG.jpg",
+          },
+          {
+            id: 4,
             img:
-              "https://abrilexame.files.wordpress.com/2018/04/siria1.jpg?quality=70&strip=info&resize=680,453",
+              "https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_1140/v1/guides/section_image/qkcqsx5nj3njaa8urccf",
+          },
+        ],
+      },
+      {
+        id: 3,
+        description: "Mais um tester pra ver se está tudo correto, por enquanto ta tudo tranquilo",
+        ExpImages: [
+          {
+            id: 1,
+            img:
+              "https://ilhanoticias.com.br/uploads//imagens/shares/noticias/anteriores/8542147cce31d9fa95d60cdd5a93e28a.jpg.jpg",
+          },
+          {
+            id: 2,
+            img: "https://zh.rbsdirect.com.br/imagesrc/23256511.jpg?w=700",
+          },
+          {
+            id: 3,
+            img: "https://conceitos.com/wp-content/uploads/2014/07/ONG.jpg",
+          },
+          {
+            id: 4,
+            img:
+              "https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_1140/v1/guides/section_image/qkcqsx5nj3njaa8urccf",
+          },
+        ],
+      },
+      {
+        id: 4,
+        description: "Agora sério, último teste sem vacilo",
+        ExpImages: [
+          {
+            id: 1,
+            img:
+              "https://ilhanoticias.com.br/uploads//imagens/shares/noticias/anteriores/8542147cce31d9fa95d60cdd5a93e28a.jpg.jpg",
+          },
+          {
+            id: 2,
+            img: "https://zh.rbsdirect.com.br/imagesrc/23256511.jpg?w=700",
+          },
+          {
+            id: 3,
+            img: "https://conceitos.com/wp-content/uploads/2014/07/ONG.jpg",
           },
           {
             id: 4,
@@ -103,7 +161,7 @@ export default {
       const result = this.ExperienceList.find(
         ({ id }) => id === parseInt(this.$route.params.id)
       );
-      this.WorkDetail = result;
+      this.ExperienceDetail = result;
 
       console.log(result);
     },
