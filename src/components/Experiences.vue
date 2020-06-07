@@ -72,11 +72,10 @@ export default {
       },
     ],
   }),
-  methods:{
-    eventExperience() {
-      
+  methods: {
+    event() {
       Bus.$emit("emit-exp");
-    }
+    },
   },
 };
 </script>
