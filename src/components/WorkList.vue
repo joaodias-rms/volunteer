@@ -17,7 +17,7 @@
     <v-list-item
       link
       v-for="item in WorkList"
-      :to="{name:'WorkDetail', params:{id:item.id}}"
+      :to="{ name: 'WorkDetail', params: { id: item.id } }"
       :key="item.id"
       @click="event()"
     >
@@ -153,7 +153,6 @@ export default {
   }),
   methods: {
     event() {
-      
       Bus.$emit("emit-click");
     },
   },
