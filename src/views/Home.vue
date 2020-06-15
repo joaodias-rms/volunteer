@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-    <HeaderHome id="Header" class="col-sm-6"/>
+    <HeaderHome/>
     <CardsCategorie />
+    <BannerHome/>
   </div>
 </template>
 
@@ -9,19 +10,18 @@
 // @ is an alias to /src
 import CardsCategorie from "@/components/CardsCategorie.vue";
 import HeaderHome from "@/components/HeaderHome.vue";
+import BannerHome from "@/components/BannerHome.vue";
 
 export default {
   name: "Home",
   components: {
     CardsCategorie,
     HeaderHome,
+    BannerHome
   },
 };
 </script>
 
 <style >
-#Header{
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
+
 </style>
