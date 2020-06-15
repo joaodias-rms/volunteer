@@ -1,11 +1,5 @@
-<template background-color="#FFFFF">
-  <div light class="col-sm-12">
-    <header>
-      <v-toolbar flat>
-        <v-btn outlined="" color="success">Voltar</v-btn>
-      </v-toolbar>
-    </header>
-
+<template>
+  <div>
     <div class="col-sm-12">
       <v-card class="col-sm-6 mx-auto" flat outlined max-width="400px">
         <div class="mb-5 col-sm-12">
@@ -31,28 +25,24 @@
             </div>
 
             <div class="">
-              <v-input type="email">
-                <v-text-field
-                  dense
-                  label="Email"
-                  color="#8634eb"
-                  outlined
-                  name="Email"
-                ></v-text-field>
-              </v-input>
+              <v-text-field
+                dense
+                label="Email"
+                color="#8634eb"
+                outlined
+                name="Email"
+              ></v-text-field>
             </div>
             <div class="">
-              <v-input>
-                <v-text-field
-                  dense
-                  color="#8634eb"
-                  v-model="password"
-                  :type="show1 ? 'text' : 'password'"
-                  outlined
-                  name="Senha"
-                  label="Senha"
-                ></v-text-field>
-              </v-input>
+              <v-text-field
+                dense
+                color="#8634eb"
+                v-model="password"
+                :type="show1 ? 'text' : 'password'"
+                outlined
+                name="Senha"
+                label="Senha"
+              ></v-text-field>
             </div>
             <div class="mb-2">
               <v-btn depressed block medium color="#8634eb">Entrar</v-btn>
