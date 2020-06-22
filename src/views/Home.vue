@@ -2,6 +2,7 @@
   <div class="home">
     <HeaderHome/>
     <CardsCategorie />
+    <Comments />
     <BannerHome/>
   </div>
 </template>
@@ -11,13 +12,15 @@
 import CardsCategorie from "@/components/CardsCategorie.vue";
 import HeaderHome from "@/components/HeaderHome.vue";
 import BannerHome from "@/components/BannerHome.vue";
+import Comments from "@/components/Comments.vue";
 
 export default {
   name: "Home",
   components: {
     CardsCategorie,
     HeaderHome,
-    BannerHome
+    BannerHome,
+    Comments,
   },
 };
 </script>
