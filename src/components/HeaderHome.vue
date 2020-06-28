@@ -18,7 +18,7 @@
           </h3>
         </div>
         <div class="col-sm-4 mx-auto">
-          <v-btn x-large block dark color="#8634eb">Como funciona?</v-btn>
+          <v-btn to="/HowWorks" x-large block dark color="#8634eb">Como funciona?</v-btn>
         </div>
       </div>
     </v-img>
