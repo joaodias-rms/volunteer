@@ -19,11 +19,12 @@
 
             <p>Sinop - MT</p>
             <div class="mt-3">
-              <v-icon class="align-content-start">mdi-star</v-icon>
-              <v-icon class="align-content-start">mdi-star</v-icon>
-              <v-icon class="align-content-start">mdi-star</v-icon>
-              <v-icon class="align-content-start">mdi-star</v-icon>
-              <v-icon class="align-content-start">mdi-star-outline</v-icon>
+              <v-rating
+                v-model="rating"
+                background-color="purple lighten-3"
+                color="#8634eb"
+              >
+              </v-rating>
             </div>
           </v-list-item-content>
         </v-list-item-content>
@@ -33,7 +34,11 @@
 </template>
 
 <script>
-export default {};
+  export default {
+    data: () => ({
+      rating: 4,
+    }),
+  }
 </script>
 
 <style></style>
