@@ -17,7 +17,7 @@
           </v-card-text>
           <v-card-actions>
             <v-btn class="mx-auto" color="#8634eb" outlined dense large
-              >Saiba mais</v-btn
+              ><v-icon>mdi-magnify</v-icon>Buscar</v-btn
             >
           </v-card-actions>
         </v-card>
@@ -38,7 +38,7 @@
           </v-card-text>
           <v-card-actions>
             <v-btn class="mx-auto" color="#8634eb" outlined dense large
-              >Saiba mais</v-btn
+              > <v-icon>mdi-map-marker-multiple</v-icon> Localizar</v-btn
             >
           </v-card-actions>
         </v-card>
@@ -58,8 +58,8 @@
             instituição para pessoas interessadas em ajudar.
           </v-card-text>
           <v-card-actions>
-            <v-btn class="mx-auto" color="#8634eb" outlined dense large
-              >Saiba mais</v-btn
+            <v-btn to="/Register" class="mx-auto" color="#8634eb" outlined dense large
+              >Cadastrar ONG</v-btn
             >
           </v-card-actions>
         </v-card>
