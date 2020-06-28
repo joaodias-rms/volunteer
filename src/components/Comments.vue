@@ -15,12 +15,11 @@
               <v-slide-item
                 v-for="n in 4"
                 :key="n"
-                v-slot:default="{ active, toggle }"
               >
-                <v-card class="ma-4" height="255" width="420" @click="toggle">
-                  <h4 class="pa-4">
+                <v-card class="ma-4" height="200" width="420">
+                  <h4 class="pa-5">
                     Da vez que ajudei os moradores de rua foi muito bom gente,
-                    sério tentem
+                    sério tentem.
                   </h4>
                   <v-list-item two-line>
                     <v-list-item-avatar size="60">
@@ -37,6 +36,9 @@
                         freelancer
                       </v-list-item-subtitle>
                     </v-list-item-content>
+                    <v-list-item-action>
+                      <v-btn color="#8634eb" outlined dense large>Leia mais</v-btn>
+                    </v-list-item-action>
                   </v-list-item>
                 </v-card>
               </v-slide-item>
@@ -45,15 +47,15 @@
         </v-row>
       </v-card>
     </v-layout>
+
+    
   </div>
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      model: null,
-    }),
-  }
+export default {
+  data: () => ({}),
+};
 </script>
 
 <style></style>
