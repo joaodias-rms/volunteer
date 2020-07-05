@@ -13,7 +13,7 @@ const routes = [
   {
     path: "/VolunteerWork",
     name: "VolunteerWork",
-    redirect: { name: "HeaderHome" },
+    redirect: { name: "RecentWorks" },
     // alias: {name:"VolunteerWork"},
     component: () => import("../views/VolunteerWork.vue"),
     children: [
@@ -24,8 +24,8 @@ const routes = [
       },
       {
         path: "",
-        name: "HeaderHome",
-        component: () => import("../components/HeaderHome.vue"),
+        name: "RecentWorks",
+        component: () => import("../components/RecentWorks.vue"),
       },
     ],
   },
