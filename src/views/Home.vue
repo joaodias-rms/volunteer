@@ -1,9 +1,10 @@
 <template>
   <div class="home">
-    <HeaderHome/>
+    <HeaderHome />
     <CardsCategorie />
     <Comments />
-    <BannerHome/>
+    <BannerHome />
+    <RecentWorks />
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import CardsCategorie from "@/components/CardsCategorie.vue";
 import HeaderHome from "@/components/HeaderHome.vue";
 import BannerHome from "@/components/BannerHome.vue";
 import Comments from "@/components/Comments.vue";
+import RecentWorks from "@/components/RecentWorks.vue";
 
 export default {
   name: "Home",
@@ -21,10 +23,9 @@ export default {
     HeaderHome,
     BannerHome,
     Comments,
+    RecentWorks,
   },
 };
 </script>
 
-<style >
-
-</style>
+<style></style>
