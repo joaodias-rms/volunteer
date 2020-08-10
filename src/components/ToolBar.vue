@@ -1,6 +1,14 @@
 .<template>
   <v-app-bar dense right flat max-height="45px">
-    <v-btn to="/" color="transparent" width="120" text class="justify-center" depressed small>
+    <v-btn
+      to="/"
+      color="transparent"
+      width="120"
+      text
+      class="justify-center"
+      depressed
+      small
+    >
       <Icon Width="120" Height="25px" colorIcon="#8634eb"
     /></v-btn>
     <v-spacer></v-spacer>
